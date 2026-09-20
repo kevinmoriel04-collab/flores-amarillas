@@ -69,8 +69,8 @@ function colocarFotos() {
 
         radio =
             Math.min(
-                ancho * 0.34,
-                190
+                ancho * 0.65,
+                300
             );
 
     } else {
