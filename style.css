@@ -1,0 +1,847 @@
+/* =================================
+   CONFIGURACIÓN GENERAL
+   ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    overflow: hidden;
+
+    font-family: Georgia, serif;
+
+    background: #fff8df;
+}
+
+
+/* =================================
+   OCULTAR ELEMENTOS
+   ================================= */
+
+.oculto {
+    display: none !important;
+}
+
+
+/* =================================
+   PANTALLA INICIAL
+   ================================= */
+
+.pantalla-inicio {
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff9d8,
+            #f8df91,
+            #e8c45d
+        );
+}
+
+
+.contenido-inicio {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.subtitulo {
+
+    margin-bottom: 15px;
+
+    color: #76551f;
+
+    font-size: 24px;
+}
+
+
+.corazon {
+
+    color: #d7a82e;
+
+    font-size: 55px;
+
+    margin-bottom: 5px;
+}
+
+
+.regalo {
+
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation: flotar 2s ease-in-out infinite;
+}
+
+
+@keyframes flotar {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =================================
+   BOTÓN
+   ================================= */
+
+#abrirRegalo {
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #d7a82e;
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.2);
+
+    transition: 0.3s;
+}
+
+
+#abrirRegalo:hover {
+
+    transform: scale(1.06);
+
+    background: #bd8f1f;
+}
+
+
+
+/* =================================
+   ESCENARIO
+   ================================= */
+
+.escenario {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    cursor: grab;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff8c9 0%,
+            #f4d875 40%,
+            #c79d48 100%
+        );
+}
+
+
+.escenario::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.55),
+            rgba(255,255,255,0)
+        );
+
+    pointer-events: none;
+}
+
+
+
+/* =================================
+   RAMO
+   ================================= */
+
+.ramo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 380px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    animation: aparecerRamo 1.2s ease;
+}
+
+
+.ramo img {
+
+    width: 100%;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 15px 20px
+            rgba(0,0,0,0.35)
+        );
+}
+
+
+@keyframes aparecerRamo {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.8);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+
+
+/* =================================
+   FOTOGRAFÍAS COLGADAS
+   ================================= */
+
+.foto {
+    position: absolute;
+
+    width: 170px;
+
+    padding: 10px 10px 18px 10px;
+
+    background: #fffef8;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    user-select: none;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 8px 12px rgba(0, 0, 0, 0.20),
+        0 18px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* Fotografía */
+
+.foto img {
+    width: 100%;
+
+    height: 140px;
+
+    object-fit: cover;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   CUERDA
+   ================================= */
+
+.foto::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -75px;
+
+    left: 50%;
+
+    width: 2px;
+
+    height: 75px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #80633d 0px,
+            #80633d 4px,
+            #a7895b 4px,
+            #a7895b 7px
+        );
+
+    transform: translateX(-50%);
+
+    z-index: -1;
+}
+
+
+/* =================================
+   PINZA DE MADERA
+   ================================= */
+
+.foto::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -12px;
+
+    left: 50%;
+
+    width: 24px;
+
+    height: 32px;
+
+    transform:
+        translateX(-50%)
+        rotate(2deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            #a97838,
+            #d2a45c,
+            #9b6b31
+        );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.35);
+
+    z-index: 2;
+}
+
+
+/* =================================
+   EFECTO AL PASAR EL MOUSE
+   ================================= */
+
+.foto:hover {
+
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 12px 18px rgba(0, 0, 0, 0.25),
+        0 22px 35px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =================================
+   CELULARES
+   ================================= */
+
+@media (max-width: 700px) {
+
+    .foto {
+
+        width: 135px;
+
+        padding: 8px 8px 14px 8px;
+    }
+
+
+    .foto img {
+
+        height: 110px;
+    }
+
+
+    .foto::after {
+
+        top: -55px;
+
+        height: 55px;
+    }
+
+}
+
+
+
+/* =================================
+   TEXTO DEL ESCENARIO
+   ================================= */
+
+.instruccion {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #62491f;
+
+    font-size: 17px;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+
+
+/* =================================
+   VISOR DE FOTOGRAFÍA
+   ================================= */
+
+.visor-foto {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    background:
+        rgba(45, 30, 10, 0.78);
+
+    backdrop-filter: blur(8px);
+
+    cursor: default;
+}
+
+
+
+/* =================================
+   FOTO GRANDE
+   ================================= */
+
+#fotoGrande {
+
+    max-width: 80vw;
+
+    max-height: 65vh;
+
+    object-fit: contain;
+
+    padding: 10px;
+
+    background: white;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.5);
+
+    animation:
+        aparecerFoto
+        0.4s ease;
+}
+
+
+@keyframes aparecerFoto {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            rotate(-5deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(-1deg);
+
+    }
+
+}
+
+
+
+/* =================================
+   BOTÓN CERRAR
+   ================================= */
+
+#cerrarFoto {
+
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #6b4b20;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.3);
+
+    transition: 0.3s;
+
+    z-index: 1001;
+}
+
+
+#cerrarFoto:hover {
+
+    transform: scale(1.1);
+
+    background: #fff3bd;
+}
+
+
+
+/* =================================
+   MENSAJE
+   ================================= */
+
+.mensaje-foto {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    padding: 15px 25px;
+
+    background:
+        rgba(255, 248, 220, 0.96);
+
+    border-radius: 8px;
+
+    color: #5c421e;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.3);
+
+    animation:
+        aparecerMensaje
+        0.5s ease;
+}
+
+
+@keyframes aparecerMensaje {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+
+/* =================================
+   CELULARES
+   ================================= */
+
+@media (max-width: 700px) {
+
+    .subtitulo {
+
+        font-size: 20px;
+
+    }
+
+
+    .regalo {
+
+        font-size: 70px;
+
+    }
+
+
+    .ramo {
+
+        width: 280px;
+
+    }
+
+
+    .foto {
+
+        width: 135px;
+
+    }
+
+
+    .foto img {
+
+        height: 110px;
+
+    }
+
+
+    #fotoGrande {
+
+        max-width: 88vw;
+
+        max-height: 55vh;
+
+    }
+
+
+    .mensaje-foto {
+
+        max-width: 85vw;
+
+        font-size: 17px;
+
+        padding: 12px 18px;
+
+    }
+
+
+    #cerrarFoto {
+
+        top: 15px;
+
+        right: 15px;
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+}
+
+/* =================================
+   PÉTALOS CAYENDO
+   ================================= */
+
+#petalos {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 50;
+}
+
+.petalo {
+    position: absolute;
+
+    top: -30px;
+
+    width: 13px;
+    height: 20px;
+
+    /* Amarillo más intenso */
+    background: #ffd000;
+
+    border-radius: 70% 30% 70% 30%;
+
+    opacity: 0.95;
+
+    /* Hace que se destaque del fondo */
+    border: 1px solid rgba(255, 170, 0, 0.8);
+
+    box-shadow:
+        0 2px 4px rgba(80, 50, 0, 0.45),
+        0 0 3px rgba(255, 220, 50, 0.8);
+
+    animation:
+        caerPetalo linear forwards;
+}
+
+@keyframes caerPetalo {
+
+    0% {
+        transform:
+            translateY(-30px)
+            translateX(0)
+            rotate(0deg);
+    }
+
+    25% {
+        transform:
+            translateY(25vh)
+            translateX(40px)
+            rotate(120deg);
+    }
+
+    50% {
+        transform:
+            translateY(50vh)
+            translateX(-35px)
+            rotate(240deg);
+    }
+
+    75% {
+        transform:
+            translateY(75vh)
+            translateX(45px)
+            rotate(330deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            translateX(-25px)
+            rotate(450deg);
+    }
+}
+
+/* =================================
+   ANIMACIÓN AL CAMBIAR FOTOGRAFÍAS
+   ================================= */
+
+.foto-desde-derecha {
+    animation: fotoDesdeDerecha 0.35s ease-out;
+}
+
+.foto-desde-izquierda {
+    animation: fotoDesdeIzquierda 0.35s ease-out;
+}
+
+@keyframes fotoDesdeDerecha {
+
+    0% {
+        opacity: 0;
+        transform: translateX(100px) scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+}
+
+@keyframes fotoDesdeIzquierda {
+
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+}

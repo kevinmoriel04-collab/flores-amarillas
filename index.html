@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Un detalle para ti 💛</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         PANTALLA INICIAL
+         ================================= -->
+
+    <section id="inicio" class="pantalla-inicio">
+
+        <div class="contenido-inicio">
+
+            <p class="subtitulo">
+                Tengo un pequeño detalle para ti...
+            </p>
+
+
+            <div class="corazon">
+                ♡
+            </div>
+
+
+            <div class="regalo">
+                🎁
+            </div>
+
+
+            <button id="abrirRegalo">
+                🎁 Abrir regalo
+            </button>
+            
+            <audio id="musicaFondo" loop>
+                <source src="Musica/musica.mp4" type="audio/mp4">
+            </audio>
+            
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         ESCENARIO PRINCIPAL
+         ================================= -->
+
+    <section id="escenario" class="escenario oculto">
+        
+        
+        <!-- PÉTALOS -->
+        
+        <div id="petalos"></div>
+
+        <!-- RAMO -->
+
+        <div class="ramo">
+
+            <img
+                src="IMAGENES/ramo.png"
+                alt="Ramo de flores amarillas"
+            >
+
+        </div>
+
+
+
+        <!-- =================================
+             FOTO 1
+             ================================= -->
+
+        <div
+            class="foto foto1"
+            data-mensaje="Desde que llegaste a mi vida, todo tiene un color diferente 💛"
+        >
+
+            <img
+                src="IMAGENES/foto1.jpg"
+                alt="Foto 1"
+            >
+
+        </div>
+
+
+
+        <!-- =================================
+             FOTO 2
+             ================================= -->
+
+        <div
+            class="foto foto2"
+            data-mensaje="Cada momento contigo se convierte en un recuerdo especial. 💛"
+        >
+
+            <img
+                src="IMAGENES/foto2.jpg"
+                alt="Foto 2"
+            >
+
+        </div>
+
+
+
+        <!-- =================================
+             FOTO 3
+             ================================= -->
+
+        <div
+            class="foto foto3"
+            data-mensaje="Gracias por cada sonrisa y cada momento compartido. 🌻"
+        >
+
+            <img
+                src="IMAGENES/foto3.jpg"
+                alt="Foto 3"
+            >
+
+        </div>
+
+
+
+        <!-- =================================
+             FOTO 4
+             ================================= -->
+
+        <div
+            class="foto foto4"
+            data-mensaje="Espero que estas flores te recuerden lo especial que eres para mí. 💛"
+        >
+
+            <img
+                src="IMAGENES/foto4.jpg"
+                alt="Foto 4"
+            >
+
+        </div>
+
+
+
+        <!-- INSTRUCCIÓN -->
+
+        <p class="instruccion">
+            Arrastra para explorar 💛
+        </p>
+
+
+
+        <!-- =================================
+             VISOR DE FOTOGRAFÍA
+             ================================= -->
+
+        <div
+            id="visorFoto"
+            class="visor-foto oculto"
+        >
+
+            <button
+                id="cerrarFoto"
+                type="button"
+            >
+                ✕
+            </button>
+
+
+            <img
+                id="fotoGrande"
+                src=""
+                alt="Fotografía ampliada"
+            >
+
+
+            <p
+                id="mensajeFoto"
+                class="mensaje-foto"
+            ></p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
